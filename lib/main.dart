@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:chat_app/Home_page.dart';
 void main()
 {
+
   runApp(new MyApp());
+
 }
 class MyApp extends StatelessWidget {
   @override
@@ -10,29 +13,12 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       theme: new ThemeData(
         primarySwatch: Colors.teal,
-
       ),
-      title: "Chat App",
-      home: new Homepage(),
-
+      title: "Pakistan Chat",
+      home: new HomePage(),
     );
+
   }
+
 }
 
-class Homepage extends StatefulWidget {
-  @override
-  _HomepageState createState() => _HomepageState();
-}
-
-class _HomepageState extends State<Homepage> {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-
-      appBar: new AppBar(
-        title: new Text("Mussabaheen Chat"),
-      ),
-
-    );
-  }
-}
