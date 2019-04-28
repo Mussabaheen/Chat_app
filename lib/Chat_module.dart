@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'message_send.dart';
 class ChatScreen extends StatefulWidget {
   @override
   _ChatScreenState createState() => _ChatScreenState();
@@ -7,6 +7,7 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController txtcontrol=new TextEditingController();
+  final List<ChatMessage> _message=<ChatMessage>[];
 
   void _handledsubmt(String msg)
   {
