@@ -12,6 +12,13 @@ class _ChatScreenState extends State<ChatScreen> {
   void _handledsubmt(String msg)
   {
     txtcontrol.clear();
+    ChatMessage chatMessage=new ChatMessage(
+      f_message: msg,
+    );
+
+    setState(() {
+      _message.insert(0, chatMessage);
+    });
 
   }
 
@@ -51,6 +58,28 @@ class _ChatScreenState extends State<ChatScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return _textcomposerWidget();
+    return new Column(
+      children: <Widget>[
+        new Flexible(
+
+          child: new ListView.builder(padding: new EdgeInsets.all(8.0),
+          reverse: true,
+            itemBuilder: (_,int index)=>_message[index],
+            itemCount: _message.length,
+          ),
+
+        ),
+        new Divider(height: 1.0,),
+        new Container(
+          decoration: new BoxDecoration(
+            color: Theme.of(context).cardColor,
+
+          ),
+          child: _textcomposerWidget(),
+        )
+
+      ],
+
+    );
   }
 }

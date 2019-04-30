@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 
 class ChatMessage extends StatelessWidget {
    var _name="Mussabaheen";
-    String f_message;
+   final String f_message;
 
-   ChatMessage()
-   {
-     this.f_message;
-   }
+  ChatMessage({this.f_message});
+
 
   @override
   Widget build(BuildContext context) {
